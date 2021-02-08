@@ -11,6 +11,7 @@ import { Container } from './styles';
 
 interface ToastProps {
   message: ToastMessage;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   style: object;
 }
 
