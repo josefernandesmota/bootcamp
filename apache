@@ -1,0 +1,585 @@
+server {
+    server_name vitaminak.design www.vitaminak.design;
+    root /var/www/vitaminak;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vitaminak.design/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vitaminak.design/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name vitaminak.com.br www.vitaminak.com.br;
+    root /var/www/vitaminak/vitaminak-redirect;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vitaminak.com.br-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vitaminak.com.br-0001/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+    server_name vitaminak.de www.vitaminak.de;
+    root /var/www/vitaminak/vitaminak-redirect;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vitaminak.de/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vitaminak.de/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+    server_name vitaminak.ch www.vitaminak.ch;
+    root /var/www/vitaminak/vitaminak-redirect;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vitaminak.ch/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vitaminak.ch/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+    server_name cupoom.club www.cupoom.club;
+    root /var/www/cupoomclub;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/cupoom.club/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/cupoom.club/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name dev.cupoom.club www.dev.cupoom.club;
+    root /var/www/devcupoomclub;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/dev.cupoom.club/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/dev.cupoom.club/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name creperoyale.com.br www.creperoyale.com.br;
+    root /var/www/creperoyale;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/creperoyale.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/creperoyale.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name desafio21dias.de www.desafio21dias.de;
+    root /var/www/desafio21dias;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/desafio21dias.de/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/desafio21dias.de/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name donapoderosa.com www.donapoderosa.com;
+    root /var/www/donapoderosa;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/donapoderosa.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/donapoderosa.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name umanasmicro.com.br www.umanasmicro.com.br;
+    root /var/www/umanasmicro;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/umanasmicro.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/umanasmicro.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name db-beauty.com www.db-beauty.com;
+    root /var/www/db-beauty;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/db-beauty.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/db-beauty.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name uaitax.com.br www.uaitax.com.br;
+    root /var/www/uaitax;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/uaitax.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/uaitax.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    server_name kleanly.services www.kleanly.services;
+    root /var/www/kleanly;
+    index index.php index.htm index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        proxy_pass http://165.22.4.86:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kleanly.services/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kleanly.services/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}server {
+    if ($host = www.vitaminak.design) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = vitaminak.design) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name vitaminak.design www.vitaminak.design;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.creperoyale.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = creperoyale.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name creperoyale.com.br www.creperoyale.com.br;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.cupoom.club) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = cupoom.club) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name cupoom.club www.cupoom.club;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.umanasmicro.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = umanasmicro.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name umanasmicro.com.br www.umanasmicro.com.br;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.db-beauty.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = db-beauty.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name db-beauty.com www.db-beauty.com;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.kleanly.services) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = kleanly.services) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name kleanly.services www.kleanly.services;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.uaitax.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = uaitax.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name uaitax.com.br www.uaitax.com.br;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.donapoderosa.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = donapoderosa.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name donapoderosa.com www.donapoderosa.com;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = www.desafio21dias.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = desafio21dias.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name desafio21dias.de www.desafio21dias.de;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    if ($host = dev.cupoom.club) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name dev.cupoom.club www.dev.cupoom.club;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = www.vitaminak.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = vitaminak.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name vitaminak.de www.vitaminak.de;
+    return 404; # managed by Certbot
+
+
+
+
+}
+
+server {
+    if ($host = www.vitaminak.ch) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = vitaminak.ch) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name vitaminak.ch www.vitaminak.ch;
+    return 404; # managed by Certbot
+
+
+
+
+}
+
+server {
+    if ($host = www.vitaminak.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = vitaminak.com.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name vitaminak.com.br www.vitaminak.com.br;
+    return 404; # managed by Certbot
+
+
+
+
+}
